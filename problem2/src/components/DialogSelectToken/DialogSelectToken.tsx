@@ -98,7 +98,7 @@ export function DialogSelectToken(props: DialogSelectTokenProps) {
                 </p>
               </div>
             )}
-
+           
             {filteredTokens.length > 0 && (
               <ul className="space-y-2 max-h-[50vh] overflow-y-auto pr-2">
                 {filteredTokens.map((token) => (

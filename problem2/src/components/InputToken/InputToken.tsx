@@ -13,9 +13,11 @@ export function InputToken({
   priceAmount, 
   disabled,
 }: TokenInputProps) {
+  console.log('priceAmount', priceAmount);
+  const cleanPriceAmount = priceAmount?.replace(/,/g, '');
   return (
     <div className={twMerge(
-      "bg-gradient-to-br from-emerald-50 to-white rounded-xl p-4",
+      "bg-gradient-to-br from-emerald-50 to-white rounded-xl p-4"
     )}>
       <div className="flex items-center justify-between mb-2">
         <label className="text-sm font-medium text-emerald-700">
@@ -50,9 +52,9 @@ export function InputToken({
                   placeholder:text-emerald-300 focus:outline-none"
       />
 
-      {priceAmount && (
+      {cleanPriceAmount && (
         <div className="mt-1.5 text-sm text-emerald-600">
-          ≈ ${Number(priceAmount).toLocaleString('en-US', { minimumFractionDigits: 2 })}
+          ≈ ${Number(cleanPriceAmount).toLocaleString('en-US', { minimumFractionDigits: 2 })}
         </div>
       )}
     </div>
